@@ -17,7 +17,8 @@ def plot_map_with_points(d2X, d2Y, d2Col, d1Contours, sColMap, d1MapRange,
     plt.clabel(contours, inline=True, fmt='%1.2f', fontsize=plot_size*1.25)
     plt.imshow(d2Col, extent=[np.min(d2X), np.max(d2X), np.min(d2Y), np.max(d2Y)], origin='lower',
                cmap=sColMap, alpha=0.5, vmin=d1MapRange[0], vmax=d1MapRange[1],
-               interpolation='bilinear')
+               interpolation='bilinear', aspect='auto')
+    # plt.colorbar()
 
     if d1ColScat is None:
         plt.scatter(d1XScat, d1YScat, s=plot_size*7.5, c='black')
@@ -60,7 +61,7 @@ def plot_sample_with_points(d1XSample, d1YSample, d1ColSample, sColMap, d1MapRan
                             d1X2=None, d1Y2=None, sCol2=None, sPoints2Label=None,
                             sXLabel=None, sYLabel=None, sTitle=None):
 
-    scat = plt.scatter(d1XSample, d1YSample, s=plot_size*10.0, c=d1ColSample, 
+    scat = plt.scatter(d1XSample, d1YSample, s=plot_size*2.0, c=d1ColSample, 
                     cmap=sColMap, vmin=d1MapRange[0], vmax=d1MapRange[1],
                     label = sSampleLabel)
     plt.plot(d1X1, d1Y1,
