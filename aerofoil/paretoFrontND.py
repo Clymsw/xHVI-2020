@@ -317,3 +317,43 @@ def getExcitingNewLocation(d2CurrentArchive, d2InputSpace,
 # [0.0625,1.19225753], [0.4375, 5.01002008]])
 
 # test = getExcitingNewLocation(y_init, x_init, [0,0], [1,1])
+
+def calculateEmpiricalAttainmentFunction(d1FinalArchives, d2Ranges):
+    """Calculates the EAF for multiple runs of an optimisation algorithm.
+    See Lopez-Ibanez et al. (2009) "Exploratory Analysis of Stochastic Local Search Algorithms in Biobjective Optimization"
+    
+    d1FinalArchives -- List of MD arrays of non-dominated sets from independent optimisation runs, as output by getNonDominatedFront()
+    d2Ranges        -- M x 2 array of [min, max] ranges for each objective. 
+    
+    Returns 
+    """
+    assert len(d2Ranges.shape) == 2
+    assert d2Ranges.shape[1] == 2
+    assert d2Ranges.shape[0] < 3 # can only cope with M = 2 for the moment
+    
+    # Create array of test points
+    d1F1 = np.linspace(d2Ranges[0,0], d2Ranges[0,1], 100)
+    d1F2 = np.linspace(d2Ranges[1,0], d2Ranges[1,1], 100)
+    [d2F1, d2F2] = np.meshgrid(d1F1, d1F2)
+    d2TestPoints = np.array((d2F1.flatten(),d2F2.flatten())).T
+    d1Attainment = np.zeros(d2TestPoints.shape[0])
+    #Update attainment for each NDS
+    for i in range(len(d1FinalArchives)):
+        # Ensure we have a Pareto Front
+        assert len(d1FinalArchives[i].shape) <= 2
+        if len(d1FinalArchives[i].shape) == 1:
+            nondomset = d1FinalArchives[i].reshape(1,-1)
+        else:
+            nondomset, _ = getNonDominatedFront(d1FinalArchives[i])
+        # Calculate dominance
+        b1Dominated = np.zeros((d2TestPoints.shape[0]), dtype=bool)
+        for j in range(nondomset.shape[0]):
+            point = nondomset[j,:]
+            b1Dominated = np.bitwise_or(b1Dominated, np.apply_along_axis(isDominatedBy, 1, d2TestPoints, point))
+        d1Attainment[b1Dominated] = d1Attainment[b1Dominated] + 1.
+    d1Attainment = d1Attainment/len(d1FinalArchives)
+    return d2F1, d2F2, d1Attainment.reshape(d2F2.shape)
+    
+# f1,f2,eaf = calculateEmpiricalAttainmentFunction([np.array([-1.,-1.1]),np.array([-1.5, -1.44])], np.array([[-2.0,0.0],[-1.6,0.0]]))
+# import matplotlib.pyplot as plt
+# plt.pcolormesh(f1,f2,eaf)

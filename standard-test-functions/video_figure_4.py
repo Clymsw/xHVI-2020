@@ -42,7 +42,7 @@ def normalise_f(f, exploration_param, ref_data=None):
 np.random.seed(1234)
 
 # %% Setup problem
-FUNCTION_NAME = "ZDT4"
+FUNCTION_NAME = "ZDT3"
 # FUNCTION_NAME = "DTLZ2"
 
 NUM_INPUT_DIMS = 2
@@ -116,61 +116,62 @@ d1HypervolumeXhvi = []
 while i < NUM_TOTAL_EVALUATIONS:
     # Plot archive
     fig = plt.figure(figsize=[figs.plot_size * 2.0, figs.plot_size * 2.], tight_layout=True)
-    gs = gridspec.GridSpec(ncols=5, nrows=4, figure=fig, height_ratios=[1,1,1,1], width_ratios=[1,1,1,1,1], hspace=0.5, wspace=0.2)
+    # gs = gridspec.GridSpec(ncols=5, nrows=4, figure=fig, height_ratios=[1,1,1,1], width_ratios=[1,1,1,1,1], hspace=0.5, wspace=0.2)
+    gs = gridspec.GridSpec(ncols=4, nrows=3, figure=fig, height_ratios=[1,1,1], width_ratios=[1,1,1,1], hspace=0.5, wspace=0.2)
     
-    # %% Plot F1
-    ax = fig.add_subplot(gs[1, 0])
-    if i > NUM_SAMPLES:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0], 
-                                  d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
-                                  d1XScat2=d2SolutionInputHypi[-1,0], d1YScat2=d2SolutionInputHypi[-1,1],
-                                  sYLabel='$x_2$', sTitle='$f_1$')
-    else:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0],
-                                  d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
-                                  sYLabel='$x_2$', sTitle='$f_1$')
-    plt.xlim(d2InputPlotRange[0])
-    plt.ylim(d2InputPlotRange[1])
+    # # %% Plot F1
+    # ax = fig.add_subplot(gs[1, 0])
+    # if i > NUM_SAMPLES:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0], 
+    #                               d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
+    #                               d1XScat2=d2SolutionInputHypi[-1,0], d1YScat2=d2SolutionInputHypi[-1,1],
+    #                               sYLabel='$x_2$', sTitle='$f_1$')
+    # else:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0],
+    #                               d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
+    #                               sYLabel='$x_2$', sTitle='$f_1$')
+    # plt.xlim(d2InputPlotRange[0])
+    # plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[1, -2])
-    if i > NUM_SAMPLES:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0], 
-                                  d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
-                                  d1XScat2=d2SolutionInputXhvi[-1,0], d1YScat2=d2SolutionInputXhvi[-1,1],
-                                  sTitle='$f_1$')
-    else:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0],
-                                  d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
-                                  sTitle='$f_1$')
-    plt.xlim(d2InputPlotRange[0])
-    plt.ylim(d2InputPlotRange[1])
+    # ax = fig.add_subplot(gs[1, -2])
+    # if i > NUM_SAMPLES:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0], 
+    #                               d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
+    #                               d1XScat2=d2SolutionInputXhvi[-1,0], d1YScat2=d2SolutionInputXhvi[-1,1],
+    #                               sTitle='$f_1$')
+    # else:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol1, d1F1Contours, 'RdYlGn_r', d2OutputRange[:,0],
+    #                               d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
+    #                               sTitle='$f_1$')
+    # plt.xlim(d2InputPlotRange[0])
+    # plt.ylim(d2InputPlotRange[1])
     
-    # %% Plot F2
-    ax = fig.add_subplot(gs[1, 1])
-    if i > NUM_SAMPLES:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
-                              d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
-                              d1XScat2=d2SolutionInputHypi[-1,0], d1YScat2=d2SolutionInputHypi[-1,1],
-                              sTitle='$f_2$')
-    else:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
-                              d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
-                              sTitle='$f_2$')
-    plt.xlim(d2InputPlotRange[0])
-    plt.ylim(d2InputPlotRange[1])
+    # # %% Plot F2
+    # ax = fig.add_subplot(gs[1, 1])
+    # if i > NUM_SAMPLES:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
+    #                           d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
+    #                           d1XScat2=d2SolutionInputHypi[-1,0], d1YScat2=d2SolutionInputHypi[-1,1],
+    #                           sTitle='$f_2$')
+    # else:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
+    #                           d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1],
+    #                           sTitle='$f_2$')
+    # plt.xlim(d2InputPlotRange[0])
+    # plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[1, -1])
-    if i > NUM_SAMPLES:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
-                              d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
-                              d1XScat2=d2SolutionInputXhvi[-1,0], d1YScat2=d2SolutionInputXhvi[-1,1],
-                              sTitle='$f_2$')
-    else:
-        figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
-                              d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
-                              sTitle='$f_2$')
-    plt.xlim(d2InputPlotRange[0])
-    plt.ylim(d2InputPlotRange[1])
+    # ax = fig.add_subplot(gs[1, -1])
+    # if i > NUM_SAMPLES:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
+    #                           d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
+    #                           d1XScat2=d2SolutionInputXhvi[-1,0], d1YScat2=d2SolutionInputXhvi[-1,1],
+    #                           sTitle='$f_2$')
+    # else:
+    #     figs.plot_map_with_points(d2X1, d2X2, d2Sol2, d1F2Contours, 'RdYlGn_r', d2OutputRange[:,1],
+    #                           d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1],
+    #                           sTitle='$f_2$')
+    # plt.xlim(d2InputPlotRange[0])
+    # plt.ylim(d2InputPlotRange[1])
     
     # %% Plot F1 v F2
     d1TestHvcsHypi = pf.calculatePotentialHvcsGivenFront(d2TestResults, d2SolutionOutputHypi, d1Reference)
@@ -182,45 +183,49 @@ while i < NUM_TOTAL_EVALUATIONS:
     dCurrentHypervolumeXhvi = pf.calculateHypervolume(d2SolutionOutputXhvi, d1Reference)
     
     ax = fig.add_subplot(gs[0, :2])
+    hv_loss_abs_hypi = dMaxHyperVolume - dCurrentHypervolumeHypi
+    hv_loss_prc_hypi = hv_loss_abs_hypi/dMaxHyperVolume * 100.
     if i > NUM_SAMPLES:
-        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsHypi, 'RdYlGn', [0., (dMaxHyperVolume - dCurrentHypervolumeHypi)/2], '',
+        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsHypi/hv_loss_abs_hypi, 'RdYlGn', [0., 0.1], '',
                               d2SolutionOutputHypi[:,0], d2SolutionOutputHypi[:,1], 'k', '',
                               d1X2=d2SolutionOutputHypi[-1,0], d1Y2=d2SolutionOutputHypi[-1,1], sCol2='k',
-                              sXLabel='$f_1$', sYLabel='$f_2$', sTitle='HypI \n Hypervolume Loss: {:.1f}%'.format((dMaxHyperVolume - dCurrentHypervolumeHypi)/dMaxHyperVolume * 100.))
+                              sXLabel='$f_1$', sYLabel='$f_2$', sTitle='HypI \n Hypervolume Loss: {:.1f}%'.format(hv_loss_prc_hypi))
     else:
-        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsHypi, 'RdYlGn', [0., (dMaxHyperVolume - dCurrentHypervolumeHypi)/2], '',
+        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsHypi/hv_loss_abs_hypi, 'RdYlGn', [0., 0.1], '',
                               d2SolutionOutputHypi[:,0], d2SolutionOutputHypi[:,1], 'k', '',
-                              sXLabel='$f_1$', sYLabel='$f_2$', sTitle='HypI \n Hypervolume Loss: {:.1f}%'.format((dMaxHyperVolume - dCurrentHypervolumeHypi)/dMaxHyperVolume * 100.))
+                              sXLabel='$f_1$', sYLabel='$f_2$', sTitle='HypI \n Hypervolume Loss: {:.1f}%'.format(hv_loss_prc_hypi))
     plt.plot(d2F1F2_PF[:,0], d2F1F2_PF[:,1], 'g.')
     # ax.set_aspect(0.2)
     
+    hv_loss_abs_xhvi = dMaxHyperVolume - dCurrentHypervolumeXhvi
+    hv_loss_prc_xhvi = hv_loss_abs_xhvi/dMaxHyperVolume * 100.
     ax = fig.add_subplot(gs[0, -2:])
     if i > NUM_SAMPLES:
-        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsXhvi, 'RdYlGn', [0., (dMaxHyperVolume - dCurrentHypervolumeXhvi)/2], '',
+        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsXhvi/hv_loss_abs_xhvi, 'RdYlGn', [0., 0.1], '',
                               d2SolutionOutputXhvi[:,0], d2SolutionOutputXhvi[:,1], 'k', '',
                               d1X2=d2SolutionOutputXhvi[-1,0], d1Y2=d2SolutionOutputXhvi[-1,1], sCol2='k',
-                              sXLabel='$f_1$', sTitle='xHVI \n Hypervolume Loss: {:.1f}%'.format((dMaxHyperVolume - dCurrentHypervolumeXhvi)/dMaxHyperVolume * 100.))
+                              sXLabel='$f_1$', sTitle='xHVI \n Hypervolume Loss: {:.1f}%'.format(hv_loss_prc_xhvi))
     else:
-        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsXhvi, 'RdYlGn', [0., (dMaxHyperVolume - dCurrentHypervolumeXhvi)/2], '',
+        figs.plot_sample_with_points(d2TestResults[:,0], d2TestResults[:,1], d1TestHvcsXhvi/hv_loss_abs_xhvi, 'RdYlGn', [0., 0.1], '',
                               d2SolutionOutputXhvi[:,0], d2SolutionOutputXhvi[:,1], 'k', '',
-                              sXLabel='$f_1$', sTitle='xHVI \n Hypervolume Loss: {:.1f}%'.format((dMaxHyperVolume - dCurrentHypervolumeXhvi)/dMaxHyperVolume * 100.))
+                              sXLabel='$f_1$', sTitle='xHVI \n Hypervolume Loss: {:.1f}%'.format(hv_loss_prc_xhvi))
     plt.plot(d2F1F2_PF[:,0], d2F1F2_PF[:,1], 'g.')
     # ax.set_aspect(0.2)
     
     # %% Plot True Hypervolume Improvement
-    ax = fig.add_subplot(gs[3, 1])
-    figs.plot_map_with_points(d2X1, d2X2, d1TestHvcsHypi.reshape(d2X1.shape), [0.5 * (dMaxHyperVolume - dCurrentHypervolumeHypi)/2], 
-                              'RdYlGn', [0., (dMaxHyperVolume - dCurrentHypervolumeHypi)/2],
+    ax = fig.add_subplot(gs[1, 1])
+    figs.plot_map_with_points(d2X1, d2X2, d1TestHvcsHypi.reshape(d2X1.shape)/hv_loss_abs_hypi, [0.001], 
+                              'RdYlGn', [0., 0.1],
                               d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1], 
-                              sXLabel='$x_1$', sTitle='Potential \n Hypervolume \n Improvement')
+                              sTitle='Potential \n Hypervolume \n Improvement')
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[3, -2])
-    figs.plot_map_with_points(d2X1, d2X2, d1TestHvcsXhvi.reshape(d2X1.shape), [0.5 * (dMaxHyperVolume - dCurrentHypervolumeXhvi)/2], 
-                              'RdYlGn', [0., (dMaxHyperVolume - dCurrentHypervolumeHypi)/2],
+    ax = fig.add_subplot(gs[1, -2])
+    figs.plot_map_with_points(d2X1, d2X2, d1TestHvcsXhvi.reshape(d2X1.shape)/hv_loss_abs_xhvi, [0.001], 
+                              'RdYlGn', [0., 0.1],
                               d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1], 
-                              sXLabel='$x_1$', sTitle='Potential \n Hypervolume \n Improvement')
+                              sTitle='Potential \n Hypervolume \n Improvement')
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
@@ -293,31 +298,37 @@ while i < NUM_TOTAL_EVALUATIONS:
     d2InfillXhviEI = ei_infill_xhvi.reshape(d2X1.shape)
     
     # %% Plot GP models
-    ax = fig.add_subplot(gs[2, 1])
-    figs.plot_map_with_points(d2X1, d2X2, d2InfillHypiNormMean, np.linspace(-0.5, 0.5, 5), 'RdYlGn_r', [-0.5, 0.5],
+    cmap_limit = 0.1
+    
+    ax = fig.add_subplot(gs[1, 0])
+    y_star_hypi = min(-d1InfillHypi_norm)[0]
+    figs.plot_map_with_points(d2X1, d2X2, d2InfillHypiNormMean, np.linspace(-0.5, 0.5, 5),
+                              'RdYlGn_r', [y_star_hypi-cmap_limit, y_star_hypi],
                               d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1], d1InfillHypi_norm[:,0],'RdYlGn', 
-                              sTitle='GP Mean \n $\mu(-HypI_{{norm}}$)')
+                              sYLabel='$x_2$',sTitle='GP Mean \n $\mu(-HypI_{{norm}}$)')
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[2, 0])
-    figs.plot_map_with_points(d2X1, d2X2, d2InfillHypiNormStd, np.linspace(0.05, 0.2, 4), 'RdYlGn_r', [0., 0.2],
-                              d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1], 'green',
-                              sYLabel='$x_2$',sTitle="GP Uncertainty \n $\sigma(-HypI_{{norm}}$)")
+    ax = fig.add_subplot(gs[-1, 0])
+    figs.plot_map_with_points(d2X1, d2X2, d2InfillHypiNormStd, np.linspace(0.05, 0.2, 4), 'RdYlGn', [0., cmap_limit],
+                              d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1], 'darkred',
+                              sXLabel='$x_1$', sYLabel='$x_2$',sTitle="GP Uncertainty \n $\sigma(-HypI_{{norm}}$)")
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[2, -2])
-    figs.plot_map_with_points(d2X1, d2X2, d2InfillXhviNormMean, np.linspace(-0.5, 0.5, 5), 'RdYlGn_r', [-0.5, 0.5],
+    ax = fig.add_subplot(gs[1, -1])
+    y_star_xhvi = min(-d1InfillXhvi_norm)[0]
+    figs.plot_map_with_points(d2X1, d2X2, d2InfillXhviNormMean, np.linspace(-0.5, 0.5, 5),
+                              'RdYlGn_r', [y_star_xhvi-cmap_limit, y_star_xhvi],
                               d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1], d1InfillXhvi_norm[:,0],'RdYlGn', 
                               sTitle='GP Mean \n $\mu(-xHVI_{{norm}}$)')
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[2, -1])
-    figs.plot_map_with_points(d2X1, d2X2, d2InfillXhviNormStd, np.linspace(0.05, 0.2, 4), 'RdYlGn_r', [0., 0.2],
-                              d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1], 'green',
-                              sTitle="GP Uncertainty \n $\sigma(-xHVI_{{norm}}$)")
+    ax = fig.add_subplot(gs[-1, -1])
+    figs.plot_map_with_points(d2X1, d2X2, d2InfillXhviNormStd, np.linspace(0.05, 0.2, 4), 'RdYlGn', [0., cmap_limit],
+                              d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1], 'darkred',
+                              sXLabel='$x_1$', sTitle="GP Uncertainty \n $\sigma(-xHVI_{{norm}}$)")
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
@@ -339,7 +350,7 @@ while i < NUM_TOTAL_EVALUATIONS:
     # plt.xlim((0.,1.))
     # plt.ylim((0.,1.))
     
-    ax = fig.add_subplot(gs[3, 0])
+    ax = fig.add_subplot(gs[-1, 1])
     
     infill_ei_rat = d2InfillHypiEI/np.max(d2InfillHypiEI)
     true_imp_rat = d1TestHvcsHypi.reshape(d2X1.shape) / np.max(d1TestHvcsHypi)
@@ -348,20 +359,20 @@ while i < NUM_TOTAL_EVALUATIONS:
                               d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1], 
                               (d1InfillHypi-np.min(d1InfillHypi))/(np.max(d1InfillHypi)-np.min(d1InfillHypi)), 'RdYlGn', 
                               d1XScat2=next_point_hypi[0][0], d1YScat2=next_point_hypi[0][1],
-                              sXLabel='$x_1$', sYLabel='$x_2$',sTitle='Expected Improvement\n $EI_{{norm}}$(HypI)\n Next: [{0:.2f}, {1:.2f}]'.format(
+                              sXLabel='$x_1$', sTitle='Expected Improvement\n $EI_{{norm}}$(HypI)\n Next: [{0:.2f}, {1:.2f}]'.format(
                                   next_point_hypi[0][0], next_point_hypi[0][1]))
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[2, 2])
-    figs.plot_map_with_points(d2X1, d2X2, true_imp_rat - infill_ei_rat, np.arange(-0.5, 0.6, 0.5), 'bwr', [-1., 1.],
-                              d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1], 
-                              sTitle='HypI\n Acquisition Error')
-    plt.xlim(d2InputPlotRange[0])
-    plt.ylim(d2InputPlotRange[1])
+    # ax = fig.add_subplot(gs[1, -3])
+    # figs.plot_map_with_points(d2X1, d2X2, true_imp_rat - infill_ei_rat, np.arange(-0.5, 0.6, 0.5), 'bwr', [-1., 1.],
+    #                           d2SolutionInputHypi[:,0], d2SolutionInputHypi[:,1], 
+    #                           sTitle='HypI\n Acquisition Error')
+    # plt.xlim(d2InputPlotRange[0])
+    # plt.ylim(d2InputPlotRange[1])
     
     
-    ax = fig.add_subplot(gs[3, -1])
+    ax = fig.add_subplot(gs[-1, -2])
     
     infill_ei_rat = d2InfillXhviEI/np.max(d2InfillXhviEI)
     true_imp_rat = d1TestHvcsXhvi.reshape(d2X1.shape) / np.max(d1TestHvcsXhvi)
@@ -375,12 +386,12 @@ while i < NUM_TOTAL_EVALUATIONS:
     plt.xlim(d2InputPlotRange[0])
     plt.ylim(d2InputPlotRange[1])
     
-    ax = fig.add_subplot(gs[3, -3])
-    figs.plot_map_with_points(d2X1, d2X2, true_imp_rat - infill_ei_rat, np.arange(-0.5, 0.6, 0.5), 'bwr', [-1., 1.],
-                              d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1], 
-                              sXLabel='$x_1$', sTitle='xHVI\n Acquisition Error')
-    plt.xlim(d2InputPlotRange[0])
-    plt.ylim(d2InputPlotRange[1])
+    # ax = fig.add_subplot(gs[-1, -3])
+    # figs.plot_map_with_points(d2X1, d2X2, true_imp_rat - infill_ei_rat, np.arange(-0.5, 0.6, 0.5), 'bwr', [-1., 1.],
+    #                           d2SolutionInputXhvi[:,0], d2SolutionInputXhvi[:,1], 
+    #                           sXLabel='$x_1$', sTitle='xHVI\n Acquisition Error')
+    # plt.xlim(d2InputPlotRange[0])
+    # plt.ylim(d2InputPlotRange[1])
     
     plt.savefig(os.path.join("video","{0}_{1:03d}.png".format(FUNCTION_NAME,q)), facecolor=None, edgecolor=None)
     q = q+1

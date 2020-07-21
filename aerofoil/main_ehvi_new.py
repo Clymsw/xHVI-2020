@@ -104,7 +104,7 @@ def evaluate_fitness(ind,idx):
     
 #### # initialized settings 
 NUM_DIM=len(afl.aerofoil_optimisation_domain)
-NUM_INIT= 1*NUM_DIM
+NUM_INIT= 8*NUM_DIM
 EVALUATION_BUDGET = 1000
 
 reference_point = [0., 0.] # Not important for the logic, just for progress reporting.
@@ -238,6 +238,9 @@ for d in range(1, NUM_OBJECTIVES):
     plt.plot(-final_front[:,0], -final_front[:,d], 
              linestyle = '', marker = '.', color = 'g', markersize = 4, 
              label = 'Final non-dominated set')
+    
+    plt.plot(y_ref[commercial_foils_to_plot,0], y_ref[commercial_foils_to_plot,1], 
+         'or', label = 'Standard Aerofoils')
 
     plt.xlabel('$f_1$'), plt.ylabel("$f_{}$".format(d+1))
     plt.legend(loc='upper right', facecolor='w')
@@ -245,6 +248,5 @@ for d in range(1, NUM_OBJECTIVES):
     plt.legend(loc='best')
 
 with open('aero_fitness_struc_TH18_xhvi_final.pkl', 'wb') as f:
-    pickle.dump(
-        [x,y,afl.aerofoil_optimisation_domain,reference_point,alpha,NUM_BATCH,NUM_INIT,times], f)  
+    pickle.dump([x,y,afl.aerofoil_optimisation_domain,reference_point,alpha,NUM_INIT,times], f)
       
