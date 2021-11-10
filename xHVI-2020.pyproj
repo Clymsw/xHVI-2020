@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{aaa0324a-aa6e-4e7f-82ae-26886aaa7e39}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>standard-test-functions\run_optimisation_test_M1.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>Global|ContinuumAnalytics|Anaconda38-64</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="aerofoil\aerofoil_eafs_N800.svg" />
+    <Content Include="aerofoil\aerofoil_eaf_diffs_N800.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ1_D10_norm_M2\DTLZ1_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ1_D10_norm_M2\DTLZ1_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ1_D10_norm_M2\DTLZ1_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ2_D10_norm_M2\DTLZ2_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ2_D10_norm_M2\DTLZ2_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ2_D10_norm_M2\DTLZ2_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ3_D10_norm_M2\DTLZ3_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ3_D10_norm_M2\DTLZ3_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ3_D10_norm_M2\DTLZ3_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ4_D10_norm_M2\DTLZ4_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ4_D10_norm_M2\DTLZ4_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ4_D10_norm_M2\DTLZ4_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ7_D10_norm_M2\DTLZ7_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ7_D10_norm_M2\DTLZ7_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ7_D10_norm_M2\DTLZ7_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT1_D10_norm_M2\ZDT1_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT1_D10_norm_M2\ZDT1_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT1_D10_norm_M2\ZDT1_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT2_D10_norm_M2\ZDT2_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT2_D10_norm_M2\ZDT2_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT2_D10_norm_M2\ZDT2_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT3_D10_norm_M2\ZDT3_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT3_D10_norm_M2\ZDT3_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT3_D10_norm_M2\ZDT3_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT4_D10_norm_M2\ZDT4_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT4_D10_norm_M2\ZDT4_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT4_D10_norm_M2\ZDT4_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT6_D10_norm_M2\ZDT6_ehvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT6_D10_norm_M2\ZDT6_ehvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT6_D10_norm_M2\ZDT6_ehvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ1_D10_M2_Z0.00_Rnorm\DTLZ1_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ1_D10_M2_Z0.00_Rnorm\DTLZ1_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ2_D10_M2_Z0.00_Rnorm\DTLZ2_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ2_D10_M2_Z0.00_Rnorm\DTLZ2_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ3_D10_M2_Z0.00_Rnorm\DTLZ3_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ3_D10_M2_Z0.00_Rnorm\DTLZ3_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ4_D10_M2_Z0.00_Rnorm\DTLZ4_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ4_D10_M2_Z0.00_Rnorm\DTLZ4_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ7_D10_M2_Z0.00_Rnorm\DTLZ7_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ7_D10_M2_Z0.00_Rnorm\DTLZ7_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT1_D10_M2_Z0.00_Rnorm\ZDT1_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT1_D10_M2_Z0.00_Rnorm\ZDT1_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT2_D10_M2_Z0.00_Rnorm\ZDT2_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT2_D10_M2_Z0.00_Rnorm\ZDT2_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT3_D10_M2_Z0.00_Rnorm\ZDT3_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT3_D10_M2_Z0.00_Rnorm\ZDT3_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT4_D10_M2_Z0.00_Rnorm\ZDT4_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT4_D10_M2_Z0.00_Rnorm\ZDT4_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT6_D10_M2_Z0.00_Rnorm\ZDT6_hypi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT6_D10_M2_Z0.00_Rnorm\ZDT6_hypi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ1_D10_M2_Z0.00_Rnorm\DTLZ1_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ1_D10_M2_Z0.00_Rnorm\DTLZ1_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ1_D10_M2_Z0.00_Rnorm\DTLZ1_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ2_D10_M2_Z0.00_Rnorm\DTLZ2_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ2_D10_M2_Z0.00_Rnorm\DTLZ2_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ2_D10_M2_Z0.00_Rnorm\DTLZ2_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ3_D10_M2_Z0.00_Rnorm\DTLZ3_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ3_D10_M2_Z0.00_Rnorm\DTLZ3_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ3_D10_M2_Z0.00_Rnorm\DTLZ3_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ4_D10_M2_Z0.00_Rnorm\DTLZ4_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ4_D10_M2_Z0.00_Rnorm\DTLZ4_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ4_D10_M2_Z0.00_Rnorm\DTLZ4_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ7_D10_M2_Z0.00_Rnorm\DTLZ7_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ7_D10_M2_Z0.00_Rnorm\DTLZ7_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ7_D10_M2_Z0.00_Rnorm\DTLZ7_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT1_D10_M2_Z0.00_Rnorm\ZDT1_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT1_D10_M2_Z0.00_Rnorm\ZDT1_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT1_D10_M2_Z0.00_Rnorm\ZDT1_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT2_D10_M2_Z0.00_Rnorm\ZDT2_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT2_D10_M2_Z0.00_Rnorm\ZDT2_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT2_D10_M2_Z0.00_Rnorm\ZDT2_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT3_D10_M2_Z0.00_Rnorm\ZDT3_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT3_D10_M2_Z0.00_Rnorm\ZDT3_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT3_D10_M2_Z0.00_Rnorm\ZDT3_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT4_D10_M2_Z0.00_Rnorm\ZDT4_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT4_D10_M2_Z0.00_Rnorm\ZDT4_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT4_D10_M2_Z0.00_Rnorm\ZDT4_xhvi_nds_kdemap.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT6_D10_M2_Z0.00_Rnorm\ZDT6_xhvi_hv_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT6_D10_M2_Z0.00_Rnorm\ZDT6_xhvi_igd_progress.svg" />
+    <Content Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT6_D10_M2_Z0.00_Rnorm\ZDT6_xhvi_nds_kdemap.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aerofoil\aerofoilSvg.py" />
+    <Compile Include="aerofoil\aerofoil_plot_pareto_fronts.py" />
+    <Compile Include="aerofoil\coord_sort.py" />
+    <Compile Include="aerofoil\initialize.py" />
+    <Compile Include="aerofoil\main_ehvi_new.py" />
+    <Compile Include="aerofoil\main_hypi_new.py" />
+    <Compile Include="aerofoil\main_xhvi_new.py" />
+    <Compile Include="aerofoil\paretoFrontND.py" />
+    <Compile Include="aerofoil\parsec_12.py" />
+    <Compile Include="aerofoil\plotFunctions.py" />
+    <Compile Include="aerofoil\run_Rfoil.py" />
+    <Compile Include="aerofoil\run_Xfoil.py" />
+    <Compile Include="aerofoil\shape_fit.py" />
+    <Compile Include="aerofoil\spar_cap_BM.py" />
+    <Compile Include="standard-test-functions\analyse_optimisation_results.py" />
+    <Compile Include="standard-test-functions\contour_ei.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="standard-test-functions\figure_2.py" />
+    <Compile Include="standard-test-functions\figure_4.py" />
+    <Compile Include="standard-test-functions\figure_M1.py" />
+    <Compile Include="standard-test-functions\figure_5.py" />
+    <Compile Include="standard-test-functions\figure_6.py" />
+    <Compile Include="standard-test-functions\ParetoFrontND.py" />
+    <Compile Include="standard-test-functions\plotFunctions.py" />
+    <Compile Include="standard-test-functions\run_optimisation_test_M1.py" />
+    <Compile Include="standard-test-functions\run_optimisation_test_ehvi.py" />
+    <Compile Include="standard-test-functions\run_optimisation_test_hypi.py" />
+    <Compile Include="standard-test-functions\run_optimisation_test_xhvi.py" />
+    <Compile Include="standard-test-functions\StandardTestFunctions.py" />
+    <Compile Include="standard-test-functions\summarise_optimisation_results_M1.py" />
+    <Compile Include="standard-test-functions\summarise_optimisation_results.py" />
+    <Compile Include="standard-test-functions\testParetoFrontND.py" />
+    <Compile Include="standard-test-functions\video_figure_4.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="aerofoil" />
+    <Folder Include="standard-test-functions" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ1_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ2_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ3_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ4_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\DTLZ7_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT1_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT2_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT3_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT4_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_EHVI_Timed\ZDT6_D10_norm_M2" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ1_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ2_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ3_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ4_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\DTLZ7_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT1_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT2_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT3_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT4_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_HypI_Timed\ZDT6_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ1_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ2_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ3_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ4_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\DTLZ7_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT1_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT2_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT3_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT4_D10_M2_Z0.00_Rnorm" />
+    <Folder Include="standard-test-functions\Results_Detailed_xHVI_Timed\ZDT6_D10_M2_Z0.00_Rnorm" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda38-64" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
